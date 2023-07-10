@@ -2,6 +2,7 @@ import Link from "next/link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
+import ApplicationLogo from "./ApplicationLogo"
 
 function Navbar() {
     const [navbar, setNavbar] = useState(false)
@@ -12,11 +13,14 @@ function Navbar() {
                     <div className="flex items-center justify-between py-3 md:py-3 md:block">
                         <Link href="/" legacyBehavior>
                             <a className="hover:scale-110 transition ease-in-out duration-200">
-                                <h2 className="text-2xl text-primary font-bold">LOGO</h2>
+                                <ApplicationLogo />
                             </a>
                         </Link>
                         <div className="md:hidden">
-                            <button className="p-2 text-gray-600 rounded-md outline-none focus:border-gray-300 focus:border transition ease-in-out duration-200" onClick={() => setNavbar(!navbar)}>
+                            <button
+                                className="p-2 text-gray-600 rounded-md outline-none hover:text-primary focus:border-gray-300 focus:border transition ease-in-out duration-200"
+                                onClick={() => setNavbar(!navbar)}
+                            >
                                 {navbar ? (
                                     <FontAwesomeIcon icon={faTimes} className="text-lg focus:border-none active:border-none focus:outline-none active:outline-none" />
                                 ) : (
