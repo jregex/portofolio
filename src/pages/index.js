@@ -3,8 +3,46 @@ import Button from "@/components/Button"
 import Head from "next/head"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faStar } from "@fortawesome/free-solid-svg-icons"
+import Input from "@/components/Input"
+import Label from "@/components/Label"
 
 export default function Home() {
+    const image = [
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 1",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 2",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 3",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 4",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 5",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 6",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 7",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 8",
+        },
+    ]
     return (
         <>
             <Head>
@@ -14,30 +52,42 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <AppLayout>
-                <section id="home" className="pt-40 pb-10 bg-dark">
+                <section id="banner" className="pt-40 pb-10 bg-dark">
                     <div className="container">
-                        <div className="flex flex-wrap">
+                        <div className="flex flex-wrap pb-10">
                             <motion.div initial={{ opacity: 0, y: 500 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }} className="w-full self-center px-4 lg:w-1/2">
-                                <h1 className="text-lg font-semibold text-primary md:text-xl">
+                                <h1 className="text-lg font-semibold text-primary md:text-xl mb-2">
                                     Welcome to <span className="block font-bold text-white text-3xl mt-1 lg:text-4xl uppercase">Movement Project</span>
                                 </h1>
-                                <h2 className="font-medium text-white text-md mb-4 lg:text-xl">#########</h2>
+                                <h2 className="font-medium text-sky-600 text-md mb-4 lg:text-lg gap-x-2 flex">
+                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
+                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
+                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
+                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
+                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
+                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
+                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
+                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
+                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
+                                </h2>
 
                                 <Button type="button">Hubungi kami</Button>
                             </motion.div>
                             <motion.div initial={{ opacity: 0, y: -300 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 2 }} className="w-full self-end px-2 lg:w-1/2">
                                 <div className="mt-10 relative lg:mt-9 right-0 animate-pantul-slow">
                                     <Image
-                                        width={300}
-                                        height={300}
+                                        width={400}
+                                        height={400}
                                         src="/assets/rocket.png"
-                                        className="max-w-full mx-auto bg-none lg:max-w-1/2 rounded-full"
+                                        className="max-w-full w-80 lg:w-100 h-auto mx-auto bg-none lg:max-w-1/2 rounded-full"
                                         alt="Rocket"
                                         blurDataURL="https://dummyimage.com/640x360/fff/aaa"
                                         priority
                                     />
-                                    <div className="absolute -z-10 top-0 -left-2 lg:left-20 md:left-20 rounded-full w-40 h-40 animate-pantul-slow lg:w-48 lg:h-48 bg-primary filter blur-3xl opacity-50 mix-blend-multiply" />
-                                    <div className="absolute -z-10 top-0 -right-4 lg:right-20 md:right-20 w-40 h-40 animate-pantul-slow lg:w-48 lg:h-48 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-50" />
+                                    <div className="absolute -z-10 top-5 lg:top-0 left-2 lg:left-36 md:left-20 rounded-full w-32 h-32 animate-pantul-slow lg:w-40 lg:h-40 bg-primary filter blur-3xl opacity-60 mix-blend-multiply" />
+                                    <div className="absolute -z-10 top-10 right-4 lg:right-24 md:right-20 w-40 h-40 animate-pantul-slow lg:w-48 lg:h-48 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-60" />
+                                    <div className="absolute -z-10 bottom-0 right-32 lg:right-64 w-48 h-48 animate-pantul-slow lg:w-58 lg:h-58 bg-pink-500 rounded-full mix-blend-multiply filter blur-2xl opacity-80" />
+                                    {/* <div className="absolute -z-10 bottom-0 right-3 lg:right-28 w-28 h-28 animate-pantul-slow lg:w-32 lg:h-32 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70" /> */}
                                 </div>
                             </motion.div>
                         </div>
@@ -49,7 +99,7 @@ export default function Home() {
                         <div className="flex flex-wrap">
                             <div className="w-full px-4 mb-10 lg:w-1/2">
                                 <h4 className="font-bold uppercase text-lg text-primary mb-3">About Us</h4>
-                                <h2 className="text-2xl lg:text-3xl font-bold text-dark mb-5 max-w-md">Lets Join with Us</h2>
+                                <h2 className="text-2xl lg:text-3xl font-bold text-dark2 mb-5 max-w-md">Lets Join with Us</h2>
                                 <p className="font-medium text-secondary antialiased leading-relaxed text-base max-w-xl lg:text-lg">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor reprehenderit quae tempore ducimus quam impedit illum aspernatur quidem amet numquam?
                                 </p>
@@ -71,7 +121,7 @@ export default function Home() {
                                         </svg>
                                     </a>
                                     <a
-                                        href="https://www.youtube.com"
+                                        href="https://www.instagram.com/movementproject45"
                                         target="_blank"
                                         className="w-10 h-10 mr-3 rounded-full flex justify-center items-center border text-primary border-primary hover:bg-primary hover:text-white hover:scale-125 transition duration-300 ease-in-out"
                                     >
@@ -81,7 +131,7 @@ export default function Home() {
                                         </svg>
                                     </a>
                                     <a
-                                        href="https://www.youtube.com"
+                                        href="https://www.twitter.com"
                                         target="_blank"
                                         className="w-10 h-10 mr-3 rounded-full flex justify-center items-center border text-primary border-primary hover:bg-primary hover:text-white hover:scale-125 transition duration-300 ease-in-out"
                                     >
@@ -96,6 +146,102 @@ export default function Home() {
                     </div>
                 </section>
                 {/* end about section */}
+                {/* projects */}
+                <section className="pt-36 pb-32 bg-gray-100" id="project">
+                    <div className="container">
+                        <div className="w-full px-4">
+                            <div className="max-w-xl mx-auto text-center mb-10">
+                                <h4 className="font-semibold text-lg uppercase text-primary mb-2">Project</h4>
+                                <h2 className="font-bold text-dark text-2xl mb-4">Project terbaru</h2>
+                                <p className="text-md font-medium text-secondary">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum odit sapiente saepe eum magni in nam voluptatem laboriosam eaque obcaecati!
+                                </p>
+                            </div>
+                        </div>
+                        <div className="w-full px-4">
+                            <div className="mb-12 lg:p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                {image.map((img, index) => (
+                                    <div className="rounded-md overflow-hidden mb-4 hover:opacity-70 hover:shadow-lg ease-out duration-300" key={index}>
+                                        <Image src={img.src} alt={img.alt} className="w-full h-auto" sizes="100vw" width="0" height="0" />
+                                        <div className="p-4">
+                                            <h3 className="font-semibold text-xl text-dark mt-5 mb-2">Landing page MVP</h3>
+                                            <p className="font-medium text-base text-secondary antialiased leading-relaxed">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illum corporis nesciunt.
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {/* end projects */}
+                {/* gallery */}
+                <section className="pt-32 pb-32 bg-dark" id="gallery">
+                    <div className="container">
+                        <div className="w-full px-4 text-center">
+                            <h4 className="font-semibold text-primary text-lg mb-2 uppercase">Gallery</h4>
+                            <h2 className="font-bold text-white text-2xl text-center mb-10">List Gallery</h2>
+                        </div>
+                        <div className="w-full px-4">
+                            <div className="mb-12 lg:p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                {image.map((img, index) => (
+                                    <Image src={img.src} alt={img.alt} key={index} className="w-full h-auto rounded-xl border-primary border-opacity-60 border-2" sizes="100vw" width="0" height="0" />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                {/* end gallery */}
+
+                {/* contact */}
+                <section className="pt-24 pb-32" id="contact">
+                    <div className="container">
+                        <div className="w-full px-4">
+                            <div className="max-w-xl mx-auto text-center mb-10">
+                                <h4 className="font-bold text-3xl text-primary mb-2">Kontak</h4>
+                                <h2 className="font-semibold text-dark text-lg mb-2 sm:text-2xl lg:text-xl">Hubungi kami</h2>
+                            </div>
+                        </div>
+                        <div className="w-full px-4 lg:w-1/2">
+                            <form>
+                                <div className="w-full px-4 mb-8">
+                                    <Label className="mb-2" htmlFor="nama">
+                                        Nama
+                                    </Label>
+                                    <Input id="nama" className="focus:shadow-xl" />
+                                </div>
+                                <div className="w-full px-4 mb-8">
+                                    <Label className="mb-2" htmlFor="email">
+                                        Email
+                                    </Label>
+                                    <Input id="email" className="focus:shadow-xl" />
+                                </div>
+                                <div className="w-full px-4 mb-8">
+                                    <Label className="mb-2" htmlFor="subjek">
+                                        Subjek
+                                    </Label>
+                                    <Input id="subjek" className="focus:shadow-xl" />
+                                </div>
+                                <div className="w-full px-4 mb-8">
+                                    <Label className="mb-2" htmlFor="body">
+                                        Komentar
+                                    </Label>
+                                    <textarea
+                                        className="rounded-md bg-slate-200 text-slate-600 border-none w-full h-40 focus:outline-none focul:ring-2 focus:border-primary focus:ring-primary focus:shadow-xl focus:ring-opacity-70"
+                                        id="body"
+                                    />
+                                </div>
+                                <div className="w-full px-4 mb-10">
+                                    <Button type="submit" className="text-xs w-full flex py-3 justify-center font-semibold">
+                                        Kirim
+                                    </Button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                {/* end contact */}
             </AppLayout>
         </>
     )
