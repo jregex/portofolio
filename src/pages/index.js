@@ -4,11 +4,50 @@ import Head from "next/head"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faStar } from "@fortawesome/free-solid-svg-icons"
+import { faStar, faPenNib, faPhotoFilm, faCode } from "@fortawesome/free-solid-svg-icons"
 import Input from "@/components/Input"
 import Label from "@/components/Label"
+import Slider from "react-slick"
 
 export default function Home() {
+    const settings = {
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "80px",
+        slidesToShow: 3,
+        speed: 500,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2,
+                },
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+    }
     const image = [
         {
             src: "https://dummyimage.com/600x400/050b33/cfd2fc",
@@ -97,8 +136,8 @@ export default function Home() {
                                     <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
                                 </h2>
 
-                                <p className="font-semibold text-lg text-primary">
-                                    Nothing Lasts Forever, Apart From <span className="font-bold text-xl text-sky-500 uppercase">Movement.</span>
+                                <p className="font-semibold text-lg text-slate-300">
+                                    Nothing Lasts Forever, Apart From <span className="font-bold text-xl text-primary uppercase">Movement.</span>
                                 </p>
                             </motion.div>
                             <motion.div initial={{ opacity: 0, y: -300 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 2 }} className="w-full self-end px-2 lg:w-1/2">
@@ -177,6 +216,41 @@ export default function Home() {
                     </div>
                 </section>
                 {/* end about section */}
+                {/* skills */}
+                <section className="pt-16 pb-12 bg-dark2" id="skills">
+                    <div className="container">
+                        <div className="w-full px-4 mb-20">
+                            <h4 className="font-bold text-primary text-xl uppercase text-center mb-2">Skills</h4>
+                            <h2 className="font-bold text-3xl text-slate-200 text-center">Our Team Skills</h2>
+                        </div>
+                        <div className="w-full px-4">
+                            <Slider {...settings} className="gap-x-4">
+                                <div className="text-center">
+                                    <FontAwesomeIcon
+                                        icon={faPhotoFilm}
+                                        className="lg:text-5xl text-6xl hover:text-primary duration-500 ease-in-out text-slate-200 mb-10 focus:border-none active:border-none focus:outline-none active:outline-none"
+                                    />
+                                    <h4 className="text-slate-400 font-semibold text-sm uppercase hover:text-primary duration-500 ease-in-out">Videography & Photography</h4>
+                                </div>
+                                <div className="text-center">
+                                    <FontAwesomeIcon
+                                        icon={faCode}
+                                        className="lg:text-5xl text-6xl hover:text-primary duration-500 ease-in-out mb-10 text-slate-200 focus:border-none active:border-none focus:outline-none active:outline-none"
+                                    />
+                                    <h4 className="text-slate-400 font-semibold text-sm uppercase hover:text-primary duration-500 ease-in-out">Website & Mobile</h4>
+                                </div>
+                                <div className="text-center">
+                                    <FontAwesomeIcon
+                                        icon={faPenNib}
+                                        className="lg:text-5xl text-6xl hover:text-primary duration-500 ease-in-out text-slate-200 mb-10 focus:border-none active:border-none focus:outline-none active:outline-none"
+                                    />
+                                    <h4 className="text-slate-400 font-semibold text-sm uppercase hover:text-primary duration-500 ease-in-out">Design Graphic</h4>
+                                </div>
+                            </Slider>
+                        </div>
+                    </div>
+                </section>
+                {/* end skills */}
                 {/* projects */}
                 <section className="pt-36 pb-32 bg-gray-100" id="project">
                     <div className="container">
