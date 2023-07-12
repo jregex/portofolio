@@ -43,6 +43,32 @@ export default function Home() {
             alt: "project image 8",
         },
     ]
+    const galleries = [
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 1",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 2",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 3",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 4",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 5",
+        },
+        {
+            src: "https://dummyimage.com/600x400/050b33/cfd2fc",
+            alt: "project image 6",
+        },
+    ]
     return (
         <>
             <Head>
@@ -56,7 +82,7 @@ export default function Home() {
                     <div className="container">
                         <div className="flex flex-wrap pb-10">
                             <motion.div initial={{ opacity: 0, y: 500 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }} className="w-full self-center px-4 lg:w-1/2">
-                                <h1 className="text-lg font-semibold text-primary md:text-xl mb-2">
+                                <h1 className="text-lg font-semibold text-slate-300 md:text-xl mb-2">
                                     Welcome to <span className="block font-bold text-white text-3xl mt-1 lg:text-4xl uppercase">Movement Project</span>
                                 </h1>
                                 <h2 className="font-medium text-sky-600 text-md mb-4 lg:text-lg gap-x-2 flex">
@@ -71,7 +97,9 @@ export default function Home() {
                                     <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
                                 </h2>
 
-                                <Button type="button">Hubungi kami</Button>
+                                <p className="font-semibold text-lg text-primary">
+                                    Nothing Lasts Forever, Apart From <span className="font-bold text-xl text-sky-500 uppercase">Movement.</span>
+                                </p>
                             </motion.div>
                             <motion.div initial={{ opacity: 0, y: -300 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 2 }} className="w-full self-end px-2 lg:w-1/2">
                                 <div className="mt-10 relative lg:mt-9 right-0 animate-pantul-slow">
@@ -94,20 +122,23 @@ export default function Home() {
                     </div>
                 </section>
                 {/* about section */}
-                <section id="about" className="pt-36 pb-32">
+                <section id="about" className="pt-36 pb-32 bg-white">
                     <div className="container">
                         <div className="flex flex-wrap">
+                            <div className="hidden px-4 lg:flex lg:w-1/2">
+                                <Image width={500} height={500} src="/assets/illustration/About-Us.svg" alt="About us" />
+                            </div>
                             <div className="w-full px-4 mb-10 lg:w-1/2">
                                 <h4 className="font-bold uppercase text-lg text-primary mb-3">About Us</h4>
-                                <h2 className="text-2xl lg:text-3xl font-bold text-dark2 mb-5 max-w-md">Lets Join with Us</h2>
-                                <p className="font-medium text-secondary antialiased leading-relaxed text-base max-w-xl lg:text-lg">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor reprehenderit quae tempore ducimus quam impedit illum aspernatur quidem amet numquam?
-                                </p>
-                            </div>
-                            <div className="w-full px-4 lg:w-1/2">
-                                <h3 className="font-semibold text-dark text-xl mb-4 lg:text-2xl lg:pt-10">Mari Order</h3>
-                                <p className="font-medium text-base text-secondary mb-6 lg:text-lg">
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi excepturi quae voluptates quo dolorum iusto facilis nesciunt ullam.
+                                <h2 className="text-xl lg:text-2xl font-bold text-dark2 mb-5 max-w-md">sedikit deskripsi tentang kami</h2>
+                                <blockquote className="p-4 my-4 border-l-4 border-primary bg-gray-100">
+                                    <p className="text-base italic font-medium leading-relaxed text-gray-900">&ldquo; Nothing Lasts Forever, Apart From Movement &quot;.</p>
+                                </blockquote>
+                                <br />
+                                <p className="font-medium text-secondary antialiased leading-relaxed text-base text-justify max-w-xl lg:text-lg mb-5">
+                                    Movement Project ialah wadah kolaborasi dari berbagai desainer grafis dimana setiap anggota tim kami memiliki keahlian khusus dalam berbagai aspek seperti desain
+                                    website, aplikasi android, fotografi & videografi, yang profesional dan berpengalaman. Kami memiliki passion yang terbukti dalam menggabungkan imajinasi menjadi
+                                    kreatifitas untuk menghasilkan desain yang memukau dan memenuhi kebutuhan klien.
                                 </p>
                                 <div className="flex items-center">
                                     <a
@@ -153,9 +184,7 @@ export default function Home() {
                             <div className="max-w-xl mx-auto text-center mb-10">
                                 <h4 className="font-semibold text-lg uppercase text-primary mb-2">Project</h4>
                                 <h2 className="font-bold text-dark text-2xl mb-4">Project terbaru</h2>
-                                <p className="text-md font-medium text-secondary">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum odit sapiente saepe eum magni in nam voluptatem laboriosam eaque obcaecati!
-                                </p>
+                                <p className="text-md font-medium text-secondary">Daftar project pernah dikerja sebelumnya</p>
                             </div>
                         </div>
                         <div className="w-full px-4">
@@ -184,8 +213,8 @@ export default function Home() {
                             <h2 className="font-bold text-white text-2xl text-center mb-10">List Gallery</h2>
                         </div>
                         <div className="w-full px-4">
-                            <div className="mb-12 lg:p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                {image.map((img, index) => (
+                            <div className="mb-12 lg:p-4 grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-10">
+                                {galleries.map((img, index) => (
                                     <Image src={img.src} alt={img.alt} key={index} className="w-full h-auto rounded-xl border-primary border-opacity-60 border-2" sizes="100vw" width="0" height="0" />
                                 ))}
                             </div>
@@ -195,7 +224,7 @@ export default function Home() {
                 {/* end gallery */}
 
                 {/* contact */}
-                <section className="pt-24 pb-32" id="contact">
+                <section className="pt-24 pb-32 bg-white" id="contact">
                     <div className="container">
                         <div className="w-full px-4">
                             <div className="max-w-xl mx-auto text-center mb-10">
@@ -203,8 +232,8 @@ export default function Home() {
                                 <h2 className="font-semibold text-dark text-lg mb-2 sm:text-2xl lg:text-xl">Hubungi kami</h2>
                             </div>
                         </div>
-                        <div className="w-full px-4 lg:w-1/2">
-                            <form>
+                        <div className="flex flex-wrap">
+                            <form className="w-full px-4 lg:w-1/2">
                                 <div className="w-full px-4 mb-8">
                                     <Label className="mb-2" htmlFor="nama">
                                         Nama
@@ -238,6 +267,11 @@ export default function Home() {
                                     </Button>
                                 </div>
                             </form>
+                            <div className="hidden px-10 lg:flex items-baseline justify-evenly lg:w-1/2 relative">
+                                <div className="absolute right-0 top-7 scale-120 rounded-full w-24 h-24 bg-primary mix-blend-multiply animate-pulse animation-delay-2000" />
+                                <div className="absolute right-12 top-32 scale-120 rounded-full w-12 h-12 bg-primary mix-blend-multiply animate-pulse animation-delay-3000" />
+                                <Image width={500} height={500} src="/assets/illustration/Contact-us.svg" className="w-[600px] h-auto" alt="Contact us" />
+                            </div>
                         </div>
                     </div>
                 </section>
