@@ -7,7 +7,7 @@ function Contact() {
     return (
         <>
             <Head>
-                <title>Contact | Portfolio</title>
+                <title>Contact Us | Portfolio</title>
             </Head>
             <AppLayout>
                 <Banner nama="Contact" />
