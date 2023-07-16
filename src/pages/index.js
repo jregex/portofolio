@@ -3,7 +3,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Skills from "@/components/Skills"
 import HomeBanner from "@/components/HomeBanner"
-import Contact from "@/components/Contact"
+import FormContact from "@/components/FormContact"
 
 export default function Home() {
     const image = [
@@ -91,9 +91,9 @@ export default function Home() {
                                 </blockquote>
                                 <br />
                                 <p className="font-medium text-secondary antialiased leading-relaxed text-base text-justify max-w-xl lg:text-lg mb-5">
-                                    Movement Project ialah wadah kolaborasi dari berbagai desainer grafis dimana setiap anggota tim kami memiliki keahlian khusus dalam berbagai aspek seperti desain
-                                    website, aplikasi android, fotografi & videografi, yang profesional dan berpengalaman. Kami memiliki passion yang terbukti dalam menggabungkan imajinasi menjadi
-                                    kreatifitas untuk menghasilkan desain yang memukau dan memenuhi kebutuhan klien.
+                                    Movement Project ialah wadah kolaborasi dari berbagai desainer grafis dimana setiap anggota tim kami memiliki keahlian khusus dalam berbagai
+                                    aspek seperti desain website, aplikasi android, fotografi & videografi, yang profesional dan berpengalaman. Kami memiliki passion yang terbukti
+                                    dalam menggabungkan imajinasi menjadi kreatifitas untuk menghasilkan desain yang memukau dan memenuhi kebutuhan klien.
                                 </p>
                                 <div className="flex items-center">
                                     <a
@@ -173,7 +173,15 @@ export default function Home() {
                         <div className="w-full px-4">
                             <div className="mb-12 lg:p-4 grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-10">
                                 {galleries.map((img, index) => (
-                                    <Image src={img.src} alt={img.alt} key={index} className="w-full h-auto rounded-xl border-primary border-opacity-60 border-2" sizes="100vw" width="0" height="0" />
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt}
+                                        key={index}
+                                        className="w-full h-auto rounded-xl border-primary border-opacity-60 border-2"
+                                        sizes="100vw"
+                                        width="0"
+                                        height="0"
+                                    />
                                 ))}
                             </div>
                         </div>
@@ -190,11 +198,11 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="flex flex-wrap">
-                            <Contact />
+                            <FormContact />
                             <div className="hidden px-10 lg:flex items-baseline justify-evenly lg:w-1/2 relative">
                                 <div className="absolute right-0 top-7 scale-120 rounded-full w-24 h-24 bg-primary mix-blend-multiply animate-pulse animation-delay-2000" />
                                 <div className="absolute right-12 top-32 scale-120 rounded-full w-12 h-12 bg-primary mix-blend-multiply animate-pulse animation-delay-3000" />
-                                <Image width={500} height={500} src="/assets/illustration/Contact-us.svg" className="w-[600px] h-auto" alt="Contact us" />
+                                <Image width="0" sizes="100vw" height="0" src="/assets/illustration/Contact-us.svg" className="w-full h-auto" alt="Contact us" />
                             </div>
                         </div>
                     </div>

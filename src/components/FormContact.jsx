@@ -2,9 +2,31 @@ import Input from "@/components/Input"
 import Label from "@/components/Label"
 import Button from "@/components/Button"
 
-function Contact() {
+function FormContact() {
     return (
         <form className="w-full px-4 lg:w-1/2">
+            <div className="w-full p-4 mb-8 bg-slate-100 rounded-xl space-y-2">
+                <div className="flex justify-between text-sm lg:text-base text-secondary antialiased">
+                    <p className="font-semibold">Address</p>
+                    <p>Makassar city, South Sulawesi</p>
+                </div>
+
+                <div className="flex justify-between text-sm lg:text-base text-secondary antialiased">
+                    <p className="font-semibold">Phone Number</p>
+                    <p>
+                        +{"("}62{")"} 82150306287
+                    </p>
+                </div>
+                <div className="flex justify-between text-sm lg:text-base text-secondary antialiased">
+                    <p className="font-semibold">Email</p>
+                    <p>
+                        {" "}
+                        <a href="mailto:movementproject@gmail.com" target="_blank" className="text-primary hover:text-dark duration-500">
+                            movementproject@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
             <div className="w-full px-4 mb-8">
                 <Label className="mb-2" htmlFor="nama">
                     Nama
@@ -41,4 +63,4 @@ function Contact() {
     )
 }
 
-export default Contact
+export default FormContact

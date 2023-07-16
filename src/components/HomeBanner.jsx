@@ -37,11 +37,11 @@ function HomeBanner() {
                                 className="max-w-full w-80 lg:w-100 h-auto mx-auto bg-none lg:max-w-1/2 rounded-full"
                                 alt="Rocket"
                                 blurDataURL="https://dummyimage.com/640x360/fff/aaa"
-                                priority
+                                priority="100"
                             />
-                            <div className="absolute -z-10 top-5 lg:top-0 left-2 lg:left-36 md:left-20 rounded-full w-32 h-32 animate-pantul-slow lg:w-40 lg:h-40 bg-primary filter blur-3xl opacity-60 mix-blend-multiply" />
-                            <div className="absolute -z-10 top-10 right-4 lg:right-24 md:right-20 w-40 h-40 animate-pantul-slow lg:w-48 lg:h-48 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-60" />
-                            <div className="absolute -z-10 bottom-0 right-32 lg:right-64 w-48 h-48 animate-pantul-slow lg:w-58 lg:h-58 bg-pink-500 rounded-full mix-blend-multiply filter blur-2xl opacity-80" />
+                            <div className="absolute -z-10 top-5 lg:top-0 left-2 lg:left-36 md:left-20 rounded-full w-32 h-32 animate-pantul-slow lg:w-40 lg:h-40 bg-primary filter blur-3xl opacity-60 mix-blend-multiply " />
+                            <div className="absolute -z-10 top-10 right-4 lg:right-24 md:right-20 w-40 h-40 animate-pantul-slow lg:w-48 lg:h-48 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-60 " />
+                            <div className="absolute -z-10 bottom-0 right-32 lg:right-64 w-48 h-48 animate-pantul-slow lg:w-58 lg:h-58 bg-pink-500 rounded-full mix-blend-multiply filter blur-2xl opacity-80 " />
                             {/* <div className="absolute -z-10 bottom-0 right-3 lg:right-28 w-28 h-28 animate-pantul-slow lg:w-32 lg:h-32 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70" /> */}
                         </div>
                     </motion.div>

@@ -3,13 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { useRouter } from "next/router"
 
 const Navbar2 = () => {
     let links = [
         {
             name: "Home",
-            link: "#banner",
+            link: "/",
         },
         {
             name: "About",
@@ -46,7 +45,9 @@ const Navbar2 = () => {
         <nav className={`w-full fixed top-0 left-0 backdrop-blur-xl z-10 bg-white/20`}>
             <div className="md:flex items-center justify-between py-2 md:px-10 px-7 container">
                 <div className="cursor-pointer flex items-center">
-                    <ApplicationLogo />
+                    <Link href="/">
+                        <ApplicationLogo />
+                    </Link>
                 </div>
                 <div className={`text-3xl absolute right-8 top-6  cursor-pointer lg:hidden ${open ? "text-primary" : "text-slate-500"}`} onClick={() => setOpen(!open)}>
                     <FontAwesomeIcon icon={open ? faTimes : faBars} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
@@ -57,7 +58,7 @@ const Navbar2 = () => {
                     }`}
                 >
                     {links.map((link, index) => (
-                        <li key={index} className="lg:ml-8 text-lg text-primary lg:my-0 my-7 ease-out duration-500 lg:hover:scale-110 hover:text-slate-400">
+                        <li key={index} className="lg:ml-8 text-lg text-primary lg:my-0 my-7 font-semibold ease-out duration-500 lg:hover:scale-110 hover:text-slate-400">
                             <Link href={link.link}>{link.name}</Link>
                         </li>
                     ))}
