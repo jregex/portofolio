@@ -1,53 +1,11 @@
-import AppLayout from "@/components/AppLayout"
-import Button from "@/components/Button"
+import AppLayout from "@/components/layouts/AppLayout"
 import Head from "next/head"
-import { motion } from "framer-motion"
 import Image from "next/image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faStar, faPenNib, faPhotoFilm, faCode } from "@fortawesome/free-solid-svg-icons"
-import Input from "@/components/Input"
-import Label from "@/components/Label"
-import Slider from "react-slick"
+import Skills from "@/components/Skills"
+import HomeBanner from "@/components/HomeBanner"
+import Contact from "@/components/Contact"
 
 export default function Home() {
-    const settings = {
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "80px",
-        slidesToShow: 3,
-        speed: 500,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        pauseOnHover: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    }
     const image = [
         {
             src: "https://dummyimage.com/600x400/050b33/cfd2fc",
@@ -117,49 +75,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <AppLayout>
-                <section id="banner" className="pt-40 pb-10 bg-dark">
-                    <div className="container">
-                        <div className="flex flex-wrap pb-10">
-                            <motion.div initial={{ opacity: 0, y: 500 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.5 }} className="w-full self-center px-4 lg:w-1/2">
-                                <h1 className="text-lg font-semibold text-slate-300 md:text-xl mb-2">
-                                    Welcome to <span className="block font-bold text-white text-3xl mt-1 lg:text-4xl uppercase">Movement Project</span>
-                                </h1>
-                                <h2 className="font-medium text-sky-600 text-md mb-4 lg:text-lg gap-x-2 flex">
-                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
-                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
-                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
-                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
-                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
-                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
-                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
-                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
-                                    <FontAwesomeIcon icon={faStar} className="focus:border-none active:border-none focus:outline-none active:outline-none" />
-                                </h2>
-
-                                <p className="font-semibold text-lg text-slate-300">
-                                    Nothing Lasts Forever, Apart From <span className="font-bold text-xl text-primary uppercase">Movement.</span>
-                                </p>
-                            </motion.div>
-                            <motion.div initial={{ opacity: 0, y: -300 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 2 }} className="w-full self-end px-2 lg:w-1/2">
-                                <div className="mt-10 relative lg:mt-9 right-0 animate-pantul-slow">
-                                    <Image
-                                        width={400}
-                                        height={400}
-                                        src="/assets/rocket.png"
-                                        className="max-w-full w-80 lg:w-100 h-auto mx-auto bg-none lg:max-w-1/2 rounded-full"
-                                        alt="Rocket"
-                                        blurDataURL="https://dummyimage.com/640x360/fff/aaa"
-                                        priority
-                                    />
-                                    <div className="absolute -z-10 top-5 lg:top-0 left-2 lg:left-36 md:left-20 rounded-full w-32 h-32 animate-pantul-slow lg:w-40 lg:h-40 bg-primary filter blur-3xl opacity-60 mix-blend-multiply" />
-                                    <div className="absolute -z-10 top-10 right-4 lg:right-24 md:right-20 w-40 h-40 animate-pantul-slow lg:w-48 lg:h-48 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-60" />
-                                    <div className="absolute -z-10 bottom-0 right-32 lg:right-64 w-48 h-48 animate-pantul-slow lg:w-58 lg:h-58 bg-pink-500 rounded-full mix-blend-multiply filter blur-2xl opacity-80" />
-                                    {/* <div className="absolute -z-10 bottom-0 right-3 lg:right-28 w-28 h-28 animate-pantul-slow lg:w-32 lg:h-32 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70" /> */}
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
+                <HomeBanner />
                 {/* about section */}
                 <section id="about" className="pt-36 pb-32 bg-white">
                     <div className="container">
@@ -217,39 +133,7 @@ export default function Home() {
                 </section>
                 {/* end about section */}
                 {/* skills */}
-                <section className="pt-16 pb-12 bg-dark2" id="skills">
-                    <div className="container">
-                        <div className="w-full px-4 mb-20">
-                            <h4 className="font-bold text-primary text-xl uppercase text-center mb-2">Skills</h4>
-                            <h2 className="font-bold text-3xl text-slate-200 text-center">Our Team Skills</h2>
-                        </div>
-                        <div className="w-full px-4">
-                            <Slider {...settings} className="gap-x-4">
-                                <div className="text-center">
-                                    <FontAwesomeIcon
-                                        icon={faPhotoFilm}
-                                        className="lg:text-5xl text-6xl hover:text-primary duration-500 ease-in-out text-slate-200 mb-10 focus:border-none active:border-none focus:outline-none active:outline-none"
-                                    />
-                                    <h4 className="text-slate-400 font-semibold text-sm uppercase hover:text-primary duration-500 ease-in-out">Videography & Photography</h4>
-                                </div>
-                                <div className="text-center">
-                                    <FontAwesomeIcon
-                                        icon={faCode}
-                                        className="lg:text-5xl text-6xl hover:text-primary duration-500 ease-in-out mb-10 text-slate-200 focus:border-none active:border-none focus:outline-none active:outline-none"
-                                    />
-                                    <h4 className="text-slate-400 font-semibold text-sm uppercase hover:text-primary duration-500 ease-in-out">Website & Mobile</h4>
-                                </div>
-                                <div className="text-center">
-                                    <FontAwesomeIcon
-                                        icon={faPenNib}
-                                        className="lg:text-5xl text-6xl hover:text-primary duration-500 ease-in-out text-slate-200 mb-10 focus:border-none active:border-none focus:outline-none active:outline-none"
-                                    />
-                                    <h4 className="text-slate-400 font-semibold text-sm uppercase hover:text-primary duration-500 ease-in-out">Design Graphic</h4>
-                                </div>
-                            </Slider>
-                        </div>
-                    </div>
-                </section>
+                <Skills />
                 {/* end skills */}
                 {/* projects */}
                 <section className="pt-36 pb-32 bg-gray-100" id="project">
@@ -296,7 +180,6 @@ export default function Home() {
                     </div>
                 </section>
                 {/* end gallery */}
-
                 {/* contact */}
                 <section className="pt-24 pb-32 bg-white" id="contact">
                     <div className="container">
@@ -307,40 +190,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="flex flex-wrap">
-                            <form className="w-full px-4 lg:w-1/2">
-                                <div className="w-full px-4 mb-8">
-                                    <Label className="mb-2" htmlFor="nama">
-                                        Nama
-                                    </Label>
-                                    <Input id="nama" className="focus:shadow-xl" />
-                                </div>
-                                <div className="w-full px-4 mb-8">
-                                    <Label className="mb-2" htmlFor="email">
-                                        Email
-                                    </Label>
-                                    <Input id="email" className="focus:shadow-xl" />
-                                </div>
-                                <div className="w-full px-4 mb-8">
-                                    <Label className="mb-2" htmlFor="subjek">
-                                        Subjek
-                                    </Label>
-                                    <Input id="subjek" className="focus:shadow-xl" />
-                                </div>
-                                <div className="w-full px-4 mb-8">
-                                    <Label className="mb-2" htmlFor="body">
-                                        Komentar
-                                    </Label>
-                                    <textarea
-                                        className="rounded-md bg-slate-200 text-slate-600 border-none w-full h-40 focus:outline-none focul:ring-2 focus:border-primary focus:ring-primary focus:shadow-xl focus:ring-opacity-70"
-                                        id="body"
-                                    />
-                                </div>
-                                <div className="w-full px-4 mb-10">
-                                    <Button type="submit" className="text-xs w-full flex py-3 justify-center font-semibold">
-                                        Kirim
-                                    </Button>
-                                </div>
-                            </form>
+                            <Contact />
                             <div className="hidden px-10 lg:flex items-baseline justify-evenly lg:w-1/2 relative">
                                 <div className="absolute right-0 top-7 scale-120 rounded-full w-24 h-24 bg-primary mix-blend-multiply animate-pulse animation-delay-2000" />
                                 <div className="absolute right-12 top-32 scale-120 rounded-full w-12 h-12 bg-primary mix-blend-multiply animate-pulse animation-delay-3000" />
