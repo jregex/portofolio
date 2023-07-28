@@ -4,6 +4,7 @@ import Image from "next/image"
 import Skills from "@/components/Skills"
 import HomeBanner from "@/components/HomeBanner"
 import FormContact from "@/components/FormContact"
+import Cards from "@/components/Cards"
 
 export default function Home() {
     const image = [
@@ -80,8 +81,8 @@ export default function Home() {
                 <section id="about" className="pt-36 pb-32 bg-white">
                     <div className="container">
                         <div className="flex flex-wrap">
-                            <div className="hidden px-4 lg:flex lg:w-1/2">
-                                <Image width={500} height={500} src="/assets/illustration/About-Us.svg" alt="About us" />
+                            <div className="hidden px-4 lg:flex items-stretch lg:w-1/2">
+                                <Image width={500} height={500} src={require("@/assets/img/about_us.svg")} alt="About us" />
                             </div>
                             <div className="w-full px-4 mb-10 lg:w-1/2">
                                 <h4 className="font-bold uppercase text-lg text-primary mb-3">About Us</h4>
@@ -164,24 +165,16 @@ export default function Home() {
                 </section>
                 {/* end projects */}
                 {/* gallery */}
-                <section className="pt-32 pb-32 bg-dark" id="gallery">
+                <section className="pt-32 pb-32 bg-gradient-to-br from-dark to-secondary" id="gallery">
                     <div className="container">
                         <div className="w-full px-4 text-center">
                             <h4 className="font-semibold text-primary text-lg mb-2 uppercase">Gallery</h4>
                             <h2 className="font-bold text-white text-2xl text-center mb-10">List Gallery</h2>
                         </div>
                         <div className="w-full px-4">
-                            <div className="mb-12 lg:p-4 grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-10">
+                            <div className="mb-12 lg:p-4 grid grid-cols-1 lg:grid-cols-3 gap-x-4 gap-y-4">
                                 {galleries.map((img, index) => (
-                                    <Image
-                                        src={img.src}
-                                        alt={img.alt}
-                                        key={index}
-                                        className="w-full h-auto rounded-xl border-primary border-opacity-60 border-2"
-                                        sizes="100vw"
-                                        width="0"
-                                        height="0"
-                                    />
+                                    <Cards src={img.src} alt={img.alt} key={index} />
                                 ))}
                             </div>
                         </div>
@@ -199,10 +192,10 @@ export default function Home() {
                         </div>
                         <div className="flex flex-wrap">
                             <FormContact />
-                            <div className="hidden px-10 lg:flex items-baseline justify-evenly lg:w-1/2 relative">
-                                <div className="absolute right-0 top-7 scale-120 rounded-full w-24 h-24 bg-primary mix-blend-multiply animate-pulse animation-delay-2000" />
-                                <div className="absolute right-12 top-32 scale-120 rounded-full w-12 h-12 bg-primary mix-blend-multiply animate-pulse animation-delay-3000" />
-                                <Image width="0" sizes="100vw" height="0" src="/assets/illustration/Contact-us.svg" className="w-full h-auto" alt="Contact us" />
+                            <div className="hidden px-10 lg:flex items-stretch justify-evenly lg:w-1/2 relative">
+                                <div className="absolute right-0 top-[100px] scale-120 rounded-full w-24 h-24 bg-primary mix-blend-multiply animate-pulse animation-delay-2000 bg-opacity-60" />
+                                <div className="absolute right-12 top-[200px] scale-120 rounded-full w-12 h-12 bg-primary mix-blend-multiply animate-pulse animation-delay-3000 bg-opacity-50" />
+                                <Image width="0" sizes="100vw" height="0" src={require("@/assets/img/contact_us.svg")} className="w-full h-auto" alt="Contact us" />
                             </div>
                         </div>
                     </div>

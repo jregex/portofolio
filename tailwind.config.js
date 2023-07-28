@@ -8,8 +8,8 @@ module.exports = {
         },
         extend: {
             colors: {
-                primary: "#14b8a6",
-                secondary: "#475569",
+                primary: "#0096FF",
+                secondary: "#051367",
                 dark: "#160040",
                 dark2: "#1B0044",
             },
@@ -27,9 +27,18 @@ module.exports = {
                         timing: "linear",
                     },
                 },
+                fly: {
+                    from: {
+                        transform: "translateY(0.1em)",
+                    },
+                    to: {
+                        transform: "translateY(-0.1em)",
+                    },
+                },
             },
             animation: {
                 "pantul-slow": "pantul 6s infinite",
+                "fly-1": "fly 0.6s ease-in-out infinite alternate",
             },
         },
     },

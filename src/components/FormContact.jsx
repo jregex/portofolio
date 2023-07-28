@@ -1,6 +1,7 @@
 import Input from "@/components/Input"
 import Label from "@/components/Label"
 import Button from "@/components/Button"
+import BtnContact from "./BtnContact"
 
 function FormContact() {
     return (
@@ -55,9 +56,10 @@ function FormContact() {
                 />
             </div>
             <div className="w-full px-4 mb-10">
-                <Button type="submit" className="text-xs w-full flex py-3 justify-center font-semibold">
+                {/* <Button type="submit" className="text-xs w-full flex py-3 justify-center font-semibold">
                     Kirim
-                </Button>
+                </Button> */}
+                <BtnContact title="kirim" />
             </div>
         </form>
     )
