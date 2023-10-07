@@ -3,30 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 const Navbar2 = () => {
-    let links = [
-        {
-            name: "Home",
-            link: "/",
-        },
-        {
-            name: "About",
-            link: "#about",
-        },
-        {
-            name: "Gallery",
-            link: "#gallery",
-        },
-        {
-            name: "Projects",
-            link: "#project",
-        },
-        {
-            name: "Contact",
-            link: "/contact",
-        },
-    ]
+    const router = useRouter()
     const [open, setOpen] = useState(false)
     const [isi, setIsi] = useState("bg-white/20")
     const handleScroll = () => {
@@ -57,11 +37,41 @@ const Navbar2 = () => {
                         open ? "top-20 opacity-100" : "top-[-600px] opacity-0 lg:opacity-100"
                     }`}
                 >
-                    {links.map((link, index) => (
-                        <li key={index} className="lg:ml-8 text-lg text-primary lg:my-0 my-7 font-semibold ease-out duration-500 lg:hover:scale-110 hover:text-slate-400">
-                            <Link href={link.link}>{link.name}</Link>
-                        </li>
-                    ))}
+                    <li
+                        className={`${
+                            router.pathname === "/" ? "text-slate-400" : "text-primary hover:text-slate-400"
+                        } lg:ml-8 text-lg lg:my-0 my-7 font-semibold ease-out duration-500 lg:hover:scale-110 `}
+                    >
+                        <Link href="/">Home</Link>
+                    </li>
+                    <li
+                        className={`${
+                            router.pathname === "/#about" ? "text-slate-400" : "text-primary hover:text-slate-400"
+                        } lg:ml-8 text-lg lg:my-0 my-7 font-semibold ease-out duration-500 lg:hover:scale-110 `}
+                    >
+                        <Link href="#about">About</Link>
+                    </li>
+                    <li
+                        className={`${
+                            router.pathname === "/#gallery" ? "text-slate-400" : "text-primary hover:text-slate-400"
+                        } lg:ml-8 text-lg lg:my-0 my-7 font-semibold ease-out duration-500 lg:hover:scale-110 `}
+                    >
+                        <Link href="#gallery">Gallery</Link>
+                    </li>
+                    <li
+                        className={`${
+                            router.pathname === "/#project" ? "text-slate-400" : "text-primary hover:text-slate-400"
+                        } lg:ml-8 text-lg lg:my-0 my-7 font-semibold ease-out duration-500 lg:hover:scale-110 `}
+                    >
+                        <Link href="#project">Projects</Link>
+                    </li>
+                    <li
+                        className={`${
+                            router.pathname === "/contact" ? "text-slate-400" : "text-primary hover:text-slate-400"
+                        } lg:ml-8 text-lg lg:my-0 my-7 font-semibold ease-out duration-500 lg:hover:scale-110`}
+                    >
+                        <Link href="/contact">Contact</Link>
+                    </li>
                 </ul>
             </div>
         </nav>
